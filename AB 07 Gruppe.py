@@ -1,6 +1,9 @@
 __author__="8503197, Tas"
 """Müssen noch die Autoren hinzufügen"""
 
+"""Müssen die Funktionen noch in classes umwandeln. Am besten in einzelnen .py Dateien machen weil ich das dezent verpeilt habe. Sollten am besten bis spätestens Donnerstag alles grob fertig haben damit wir genug Zeit 
+   haben den Feinschliff noch hin zu bekommen"""
+
 import csv
 
 """ Die Anzeige funktioniert gut, sollte trz nochmal visuell besser dargestellt werden"""
