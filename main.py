@@ -1,22 +1,8 @@
-__author__="8503197, Tas"
-"""Müssen noch die Autoren hinzufügen"""
+'''
+tzuij
+'''
 
-"""Müssen die Funktionen noch in classes umwandeln. Am besten in einzelnen .py Dateien machen weil ich das dezent verpeilt habe. Sollten am besten bis spätestens Donnerstag alles grob fertig haben damit wir genug Zeit 
-   haben den Feinschliff noch hin zu bekommen"""
-
-import csv
-
-
-def menu_display():
-    input_file = csv.DictReader(open("food.csv"),delimiter=";")
-    print("--- Menu ---")
-    for row in input_file:
-        print(f"{row["name"]}, {row["typ"]}, {row["categorie"]}, {row["price"]}€")
-
-"""Habe jetzt mit dem Ordering system angefangen. Der Anfang funktioniert ohne probleme, müssen jetzt nur daran 
-   arbeiten das man beim Getränk auch nur ein Getränk bestellen kann und das selbe fürs Essen. Komme heute nicht dazu 
-   aber vielleicht kann jemand von euch schon mal ein Blick drauf werfen. Tipp: Maybe mit einer for schleife prüfen 
-   ob die Kategorie stimmt."""
+import menu
 
 
 def ordering():
@@ -31,54 +17,14 @@ def ordering():
 
 
             print("That is our Menu")
-            menu_display()
+            menu.menu_display()
 
             drink = input("What do you want to drink?")
+        return people
 
 
 """Habe hier erstmal ne Pause gemacht weil ich daran net arbeiten wollte. Vielleicht ist jemand motiviert um das 
    Dictionary in ein funktionierenden Zustand zu bekommen. Müssen noch das Prüfungssystem dafür implementieren. """
-# def tisch(platz):
-#
-#
-#     platz = {
-#         "platz1": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         },
-#         "platz2": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         },
-#         "platz3": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         },
-#         "platz4": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         },
-#         "platz5": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         },
-#         "platz6": {
-#             "anzahl": people,
-#             "drink": drink,
-#             "main": main,
-#             "frei": True
-#         }
-#     }
 
 
 ordering()

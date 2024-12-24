@@ -12,4 +12,4 @@ def menu_display():
         print(f"{row["name"]}, {row["type"]}, {row["category"]}, {row["price"]}€")
 
 
-menu_display()
+# menu_display()

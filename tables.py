@@ -3,7 +3,7 @@ tisch
 '''
 
 from typing import Dict
-import main
+from main import ordering
 
 
 tables = {}
@@ -19,7 +19,6 @@ def add_table(tables: Dict, location: str, occupancy: bool, attributes: Dict):
     tables[location][occupancy] = attributes
 
 
-
 def count():
     n = 1
     while n <= 6:
@@ -27,9 +26,11 @@ def count():
         n = n + 1
 
 
+people = ordering()/4
 
+for _ in people:
 
-add_table(tables, count(), False, {'Anzahl': main.ordering()/4})
+    add_table(tables, count(), False, {'Anzahl': people})
 
 
 
