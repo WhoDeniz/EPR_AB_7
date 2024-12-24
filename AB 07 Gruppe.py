@@ -17,11 +17,13 @@ def menu_display():
    arbeiten das man beim Getränk auch nur ein Getränk bestellen kann und das selbe fürs Essen. Komme heute nicht dazu 
    aber vielleicht kann jemand von euch schon mal ein Blick drauf werfen. Tipp: Maybe mit einer for schleife prüfen 
    ob die Kategorie stimmt."""
+
+
 def ordering():
     print("Hi Welcome to chili's!")
     while True:
         people = int(input("How many People are you? "))
-        #Sollten eine Fail safe implementieren, falls der User ein String oder Float angibt
+        # Sollten eine Fail safe implementieren, falls der User ein String oder Float angibt
         if people <= 0:
             print("Oh sorry it seems there is a little problem. Could you repeat how many people you are?")
         else:

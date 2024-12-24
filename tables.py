@@ -8,12 +8,11 @@ from AB 07 Gruppe import ordering
 
 tables = {}
 
+
 def add_table(tables: Dict, location: str, occupancy: bool, attributes: Dict):
     '''
     adds table with number of people, drink, main and says if full
     '''
-
-    
 
     if location not in tables:
         tables[location] = {}
@@ -30,7 +29,7 @@ def count():
 
 
 
-add_table(tables, count(), )
+add_table(tables, count(), False, {'Anzahl': people/4})
 
 
 
