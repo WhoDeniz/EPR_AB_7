@@ -3,7 +3,7 @@ tisch
 '''
 
 from typing import Dict
-from AB 07 Gruppe import ordering
+import main
 
 
 tables = {}
@@ -29,7 +29,7 @@ def count():
 
 
 
-add_table(tables, count(), False, {'Anzahl': people/4})
+add_table(tables, count(), False, {'Anzahl': main.ordering()/4})
 
 
 
@@ -74,6 +74,5 @@ def tisch(platz):
              "frei": True
          }
      }
-'''
 
 
