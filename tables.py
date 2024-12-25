@@ -2,9 +2,6 @@
 tisch
 '''
 
-from xmlrpc.client import Boolean
-import menu
-
 
 class Table:
     '''
@@ -24,7 +21,6 @@ class Table:
         else:
             self.status = table_status
             print(f'Table {table_number} is occupied')
-
 
 
 T1 = Table(1, True)

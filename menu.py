@@ -16,4 +16,4 @@ class Menu:
                 print(f"{row["name"]}, {row["type"]}, {row["category"]}, {row["price"]}€")
 
 
-# TEST menu_display()
+menu_display()
