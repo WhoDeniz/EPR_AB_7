@@ -7,7 +7,10 @@ class Order:
     def __init__(self, people, menu_file):
         self.people = people
         self.menu = Menu(menu_file)
-
+"""
+Funktoniert noch nicht ganz muss noch daran arbeiten. Ziel ist das wenn nach einem Getränk gefragt wird auch nur ein Getränk ausgewählt 
+werden kann und das selbe bei den Speisen. Wird also noch gemacht aber ist bereits ein anfang
+"""
     def ordering(self):
         while self.people <= 0:
             print("Oh sorry it seems there is a little problem. Could you repeat how many people you are?")
