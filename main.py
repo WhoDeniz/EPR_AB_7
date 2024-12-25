@@ -27,8 +27,4 @@ def ordering():
         return people
 
 
-"""Habe hier erstmal ne Pause gemacht weil ich daran net arbeiten wollte. Vielleicht ist jemand motiviert um das 
-   Dictionary in ein funktionierenden Zustand zu bekommen. Müssen noch das Prüfungssystem dafür implementieren. """
-
-
 ordering()
