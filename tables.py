@@ -2,7 +2,7 @@
 tisch
 '''
 
-import main
+import 
 
 class Table:
     '''

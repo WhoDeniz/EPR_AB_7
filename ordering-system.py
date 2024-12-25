@@ -1,5 +1,6 @@
-__author__="8503197, Tas"
-
+'''
+hjiuh
+'''
 from menu import Menu
 
 class Order:
