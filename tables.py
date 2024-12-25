@@ -24,7 +24,6 @@ class Table:
             print(f'Table {table_number} is occupied')
 
 
-
 T1 = Table(1, True)
 T2 = Table(2, False)
 
