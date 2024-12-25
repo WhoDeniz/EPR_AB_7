@@ -6,6 +6,9 @@ import menu
 
 
 def ordering():
+    '''
+    displaying menu and asking for the amount of people and taking their orders
+    '''
     print("Hi Welcome to chili's!")
     while True:
         people = int(input("How many People are you? "))
@@ -20,6 +23,7 @@ def ordering():
             menu.menu_display()
 
             drink = input("What do you want to drink?")
+            main = input("What do you want to eat?")
         return people
 
 
