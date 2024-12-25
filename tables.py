@@ -26,10 +26,9 @@ def count():
         n = n + 1
 
 
-people = ordering()/4
+people = ordering()//4
 
 for _ in people:
-
     add_table(tables, count(), False, {'Anzahl': people})
 
 
