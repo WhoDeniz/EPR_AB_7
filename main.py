@@ -28,17 +28,3 @@ def ordering():
 
 
 ordering()
-
-
-
-
-
-
-
-
-
-
-
-
-
-

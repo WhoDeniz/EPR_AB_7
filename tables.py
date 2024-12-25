@@ -2,77 +2,30 @@
 tisch
 '''
 
-from typing import Dict
-from main import ordering
+from xmlrpc.client import Boolean
+import menu
 
 
-tables = {}
-
-
-def add_table(tables: Dict, location: str, occupancy: bool, attributes: Dict):
+class Table:
     '''
-    adds table with number of people, drink, main and says if full
+    Table class to create table objects
     '''
+    def __init__(self, table_number: int, table_status: bool):
 
-    if location not in tables:
-        tables[location] = {}
-    tables[location][occupancy] = attributes
+        if table_number == 'None':
+            pass
+        else:
+            self.table = table_number
 
+        if table_status is False:
+            self.satus = []
+            print(f'Table {table_number} is free')
 
-def count():
-    n = 1
-    while n <= 6:
-        print(f'table {n}')
-        n = n + 1
-
-
-people = ordering()//4
-
-for _ in people:
-    add_table(tables, count(), False, {'Anzahl': people})
+        else:
+            self.status = table_status
+            print(f'Table {table_number} is occupied')
 
 
 
-def tisch(platz):
-
-
-    platz = {
-         "platz1": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         },
-         "platz2": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         },
-         "platz3": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         },
-         "platz4": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         },
-         "platz5": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         },
-         "platz6": {
-             "anzahl": people,
-             "drink": drink,
-             "main": main,
-             "frei": True
-         }
-     }
-
-
+T1 = Table(1, True)
+T2 = Table(2, False)
