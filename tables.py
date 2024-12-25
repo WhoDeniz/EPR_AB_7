@@ -2,12 +2,13 @@
 tisch
 '''
 
+import main
 
 class Table:
     '''
     Table class to create table objects
     '''
-    def __init__(self, table_number: int, table_status: bool):
+    def __init__(self, table_number: int, table_status: bool, ):
 
         if table_number == 'None':
             pass
@@ -23,5 +24,10 @@ class Table:
             print(f'Table {table_number} is occupied')
 
 
+
 T1 = Table(1, True)
 T2 = Table(2, False)
+
+
+for table in range():
+    print('asd')

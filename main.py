@@ -18,13 +18,13 @@ def ordering():
         else:
             print("Perfect! I will bring you to your table, come with me")
 
+        print("That is our Menu")
+        menu.menu_display()
 
-            print("That is our Menu")
-            menu.menu_display()
-
-            drink = input("What do you want to drink?")
-            main = input("What do you want to eat?")
-        return people
+        for _ in range(people):
+            drink = str(input("What do you want to drink?"))
+            main = str(input("What do you want to eat?"))
+        return people, drink, main
 
 
 ordering()
