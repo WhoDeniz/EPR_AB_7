@@ -37,9 +37,9 @@ class Menu:
             input_file = csv.DictReader(csvfile, delimiter=";")
             for row in input_file:
                 self.items.append(row)
-                if row["typ"].lower() == "drink":
+                if row["type"].lower() == "drink":
                     self.drinks.append(row["name"].strip().lower())
-                if "main" in row["typ"].lower():
+                if "main" in row["type"].lower():
                     self.food.append(row["name"].strip().lower())
 
     def menu_display(self):
@@ -48,7 +48,7 @@ class Menu:
         """
         print("--- Menu ---")
         for row in self.items:
-            print(f"{row["name"]}, {row["typ"]}, {row["categorie"]}, {row["price"]}€")
+            print(f"{row["name"]}, {row["type"]}, {row["category"]}, {row["price"]}€")
 
     def get_food(self):
         '''
@@ -70,7 +70,7 @@ class Menu:
 # testen können und es nicht in anderen Dateien direkt ausgeführt wird.
 
 
-if __name__ == "__main__":
-    menu = Menu("food.csv")
-    menu.load_menu()
-    menu.menu_display()
+# if __name__ == "__main__":
+#    menu = Menu("food.csv")
+#    menu.load_menu()
+#    menu.menu_display()

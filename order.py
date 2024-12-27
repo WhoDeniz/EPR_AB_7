@@ -29,10 +29,10 @@ class Order:
         """
         while True:
             try:
-                people = int(input("Hi Welcome to chili's!How many people are you? "))    # Vine times
+                people = int(input("Hi Welcome to chili's! How many people are you?\n"))    # Vine times
                 if people <= 0:    # Weniger als ein Gast zu bedienen ist halt auch schwer
                     people = int(input("Oh sorry it seems there is a little problem. Could you repeat how many "
-                                       "people you are?"))
+                                       "people you are?\n"))
                     return people    # Die (hoffentlich) Valide Zahl wird zurückgegeben.
 
                 else:
@@ -48,7 +48,7 @@ class Order:
         kopfschmerzen bereitet, mehr als ich jemals erwarten konnte.
         """
         while True:    # Solange es true ist, wird die Sequenz wiederholt.
-            drink = input("What do you wanna drink?").strip().lower()   # Das.strip() hat mir kostbare Lebensjahre geraubt.
+            drink = input("What do you wanna drink?\n").strip().lower()   # Das.strip() hat mir kostbare Lebensjahre geraubt.
                                                                         # Erst dann hat es funktioniert. In diesem
                                                                         # Restaurant muss man mindestens ein Getränk
                                                                         # bestellen. Wir sind böse idc.
@@ -63,13 +63,14 @@ class Order:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
                 print("Those are our drinks", ",".join(self.drinks))    # Eine Auflistung der Getränke damit man nicht die
                                                                         # ganze Zeit hochgehen muss
+        print(drink)
 
     def ordering_food(self):
         """
         Nach Essen wird abgefragt
         """
         while True:
-            food = input("What do you wanna eat?").strip().lower()
+            food = input("What do you wanna eat?\n").strip().lower()
 
             if food in self.food:
                 again = input(f"Great here is your {food}, do you want something else(yes/no)?: ").strip().lower()
@@ -81,10 +82,11 @@ class Order:
             else:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
                 print("Those are our Main dishes", ",".join(self.food))    # Alles genauso wie bei den drinks
+        print(food)
 
 
-if __name__ == "__main__":
-    order = Order("food.csv")
-    order.thy_table()
-    order.ordering_drinks()
-    order.ordering_food()
+# if __name__ == "__main__":
+#   order = Order("food.csv")
+#   order.thy_table()
+#   order.ordering_drinks(drink=[])
+#   order.ordering_food()

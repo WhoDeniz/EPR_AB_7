@@ -9,7 +9,9 @@ class Table:
     '''
     Table class contains order of prople and status of the table
     '''
-    def __init__(self, table_number: int, table_status: bool, ):
+    def __init__(self, table_number: int, table_status: bool, order: Order):
+
+        self.order = order
 
         if table_number == 'None':
             pass
@@ -24,7 +26,10 @@ class Table:
             self.status = table_status
             print(f'Table {table_number} is occupied')
 
-
-while True:
-    try:
-        Order.ordering()
+    def orderdetails(self):
+        '''
+        prints the order details
+        '''
+        print(f'Order details for table {self.table} are: ')
+        self.order.ordering_drinks()
+        self.order.ordering_food()
