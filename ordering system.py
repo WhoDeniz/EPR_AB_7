@@ -12,8 +12,7 @@ class Order:
         self.menu.load_menu()
         self.drinks = self.menu.get_drinks() #Die Liste mit den Getränken wird hier abgespeichert
         self.food = self.menu.get_food() #Dir Liste mit dem Essen wir hier abgespeichert
-        self.extra = []
-        self.remove = []
+
 
     def thy_table(self):
         """
@@ -23,7 +22,7 @@ class Order:
         """
         while True:
             try:
-                people = int(input("Hi Welcome to chili's!How many people are you? ")) #Vine times
+                people = int(input("Hi Welcome to chili's! How many people are you? "))
                 if people <= 0: #Weniger als ein Gast zu bedienen ist halt auch schwer
                    people = int(input("Oh sorry it seems there is a little problem. Could you repeat how many"
                                       "people you are?"))
@@ -80,35 +79,17 @@ class Order:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
                 print("Those are our Main dishes", ",".join(self.food)) #Alles genauso wie bei den drinks
 
-    def plus(self):
-        while True:
-           more = input("Do you want to add(add) something for 1€ or "
-                        "do you want to remover(remove) something. if u want to exit just say so.").strip().lower()
-
-           if more == "add":
-                lots = input("What do you want to add for 1€? ")
-                self.extra.append(lots.strip().lower())
-                continue
-           elif more == "remove":
-                expel = input("What do you want to remove? ")
-                self.remove.append(expel.strip().lower())
-                continue
-           else:
-               print("If you need something just call me!")
-               break
-
-    def get_extra(self):
-        return self.extra
-
-    def get_removed(self):
-        return self.remove    
+    def bestellung_aufnehmen(self):
+        order = Order("food.csv")
+        order.thy_table()
+        order.ordering_drinks()
+        order.ordering_food()
 
 
 
-if __name__ == "__main__":
-    order = Order("food.csv")
-    order.thy_table()
-    order.ordering_drinks()
-    order.ordering_food()
-    order.plus()
+
+
+
+
+
 
