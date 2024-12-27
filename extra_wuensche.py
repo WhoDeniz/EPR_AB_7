@@ -29,6 +29,3 @@ class Extra_Wuensche:
     def get_removed(self):
         return self.remove
 
-if __name__ == "__main__":
-    extra_wuensche = Extra_Wuensche()
-    extra_wuensche.plus()
