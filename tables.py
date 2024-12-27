@@ -2,11 +2,11 @@
 tisch
 '''
 
-import 
+from ordering-system import Order
 
 class Table:
     '''
-    Table class to create table objects
+    Table class contains order of prople and status of the table
     '''
     def __init__(self, table_number: int, table_status: bool, ):
 
