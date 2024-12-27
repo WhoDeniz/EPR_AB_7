@@ -12,6 +12,8 @@ class Order:
         self.menu.load_menu()
         self.drinks = self.menu.get_drinks() #Die Liste mit den Getränken wird hier abgespeichert
         self.food = self.menu.get_food() #Dir Liste mit dem Essen wir hier abgespeichert
+        self.extra = []
+        self.remove = []
 
     def thy_table(self):
         """
@@ -37,26 +39,28 @@ class Order:
                                                                                                         # safe
 
     def ordering_drinks(self):
-        """
-        Abfrage nach Getränken. So implementiert damit auch nur Getränke eingegeben werden können. Das hat mir zu viele
-        kopfschmerzen bereitet, mehr als ich jemals erwarten konnte.
-        """
-        while True: #Solange es true ist, wird die Sequenz wiederholt.
-            drink = input("What do you wanna drink?").strip().lower() #Das.strip() hat mir kostbare Lebensjahre geraubt.
-                                                                      #Erst dann hat es funktioniert. In diesem
-                                                                      #Restaurant muss man mindestens ein Getränk
-                                                                      #bestellen. Wir sind böse idc.
-            if drink in self.drinks:
-                again = input(f"Great here is your {drink}, do you want something else(yes/no)?: ").strip().lower()
-                if again == "yes": #Möglichkeit mehrere Sachen zu bestellen
-                    continue
+            """
+            Abfrage nach Getränken. So implementiert damit auch nur Getränke eingegeben werden können. Das hat mir zu viele
+            kopfschmerzen bereitet, mehr als ich jemals erwarten konnte.
+            """
+            while True:  # Solange es true ist, wird die Sequenz wiederholt.
+                drink = input(
+                    "What do you wanna drink?").strip().lower()  # Das.strip() hat mir kostbare Lebensjahre geraubt.
+                # Erst dann hat es funktioniert. In diesem
+                # Restaurant muss man mindestens ein Getränk
+                # bestellen. Wir sind böse idc.
+                if drink in self.drinks:
+                    again = input(f"Great here is your {drink}, do you want something else(yes/no)?: ").strip().lower()
+                    if again == "yes":  # Möglichkeit mehrere Sachen zu bestellen
+                        continue
+                    else:
+                        print(f"Perfect! Enjoy your {drink}! I will be back if u want to order food. ")
+                        break  # Damit wir nicht in einer dauerschleife gefangen sind
                 else:
-                    print("Perfect! Enjoy your drink! I will be back if u want to order food. ")
-                    break #Damit wir nicht in einer dauerschleife gefangen sind
-            else:
-                print("Oh sorry we dont have that in our menu, would you like something different?")
-                print("Those are our drinks", ",".join(self.drinks)) #Eine Auflistung der Getränke damit man nicht die
-                                                                     #ganze Zeit hochgehen muss
+                    print("Oh sorry we dont have that in our menu, would you like something different?")
+                    print("Those are our drinks",
+                          ",".join(self.drinks))  # Eine Auflistung der Getränke damit man nicht die
+                    # ganze Zeit hochgehen muss
 
     def ordering_food(self):
         """
@@ -66,15 +70,39 @@ class Order:
             food = input("What do you wanna eat?").strip().lower()
 
             if food in self.food:
-                again = input(f"Great here is your {food}, do you want something else(yes/no)?:" ).strip().lower()
+                again = input(f"Great, for you a {food}, do you want something else(yes/no)?:" ).strip().lower()
                 if again =="yes":
                     continue
                 else:
-                    print("Alrighty! Enjoy your food. If u need something just call me.")
+                    print("Alrighty! If u need something just call me.")
                     break
             else:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
                 print("Those are our Main dishes", ",".join(self.food)) #Alles genauso wie bei den drinks
+
+    def plus(self):
+        while True:
+           more = input("Do you want to add(add) something for 1€ or "
+                        "do you want to remover(remove) something. if u want to exit just say so.").strip().lower()
+
+           if more == "add":
+                lots = input("What do you want to add for 1€? ")
+                self.extra.append(lots.strip().lower())
+                continue
+           elif more == "remove":
+                expel = input("What do you want to remove? ")
+                self.remove.append(expel.strip().lower())
+                continue
+           else:
+               print("If you need something just call me!")
+               break
+
+    def get_extra(self):
+        return self.extra
+
+    def get_removed(self):
+        return self.remove    
+
 
 
 if __name__ == "__main__":
@@ -82,3 +110,5 @@ if __name__ == "__main__":
     order.thy_table()
     order.ordering_drinks()
     order.ordering_food()
+    order.plus()
+
