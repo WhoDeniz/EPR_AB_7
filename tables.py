@@ -2,7 +2,8 @@
 tisch
 '''
 
-from ordering-system import Order
+from order import Order
+
 
 class Table:
     '''
@@ -24,9 +25,6 @@ class Table:
             print(f'Table {table_number} is occupied')
 
 
-T1 = Table(1, True)
-T2 = Table(2, False)
-
-
-for table in range():
-    print('asd')
+while True:
+    try:
+        Order.ordering()
