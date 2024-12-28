@@ -6,6 +6,7 @@ from ordering_system import Order
 from menu import Menu
 from extra_wuensche import Extra_Wuensche
 from tables import Table
+from invoice import Invoice
 
 __author__ = "8503197, Tas"
 
@@ -46,7 +47,13 @@ class Uebersicht:
             elif auswahl == "4":
                 self.menu.menu_display()  # Menue anzeigen lassen
             elif auswahl == "5":  # GOT Rechnung System fertig machen
-                pass
+                table_number = int(input("Enter the table number for the invoice: "))
+                table = next((t for t in self.tables if t.tablenr == table_number), None)
+                if table:
+                    invoice = Invoice(table)
+                    print(invoice)
+                else:
+                    print(f"No table found with number {table_number}")
             elif auswahl == "6":
                 print("Goodbye!!!")
                 exit()

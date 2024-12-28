@@ -17,6 +17,7 @@ class Menu:
         self.items = []    # Alle Items
         self.drinks = []    # Nur Drinks
         self.food = []    # Nur Essen
+        self.prices = {}    # Preise
 
     def load_menu(self):
         """
@@ -41,6 +42,7 @@ class Menu:
                     self.drinks.append(row["name"].strip().lower())
                 if "main" in row["type"].lower():
                     self.food.append(row["name"].strip().lower())
+                self.prices[row["name"].strip().lower()] = float(row["price"])
 
     def menu_display(self):
         """
@@ -63,6 +65,12 @@ class Menu:
         System genutzt werden können
         '''
         return self.drinks
+    
+    def get_price(self, item_name):
+        '''
+        Gibt den Preis des Items zurück
+        '''
+        return self.prices.get(item_name, 0.0)
 
 
 # Wird nur direkt ausgeführt wenn die Datei als Skript gestartet wird.

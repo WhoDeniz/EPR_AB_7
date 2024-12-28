@@ -6,6 +6,7 @@ __author__ = "8503197, Tas"
 
 
 from menu import Menu
+from extra_wuensche import Extra_Wuensche
 
 
 class Order:
@@ -27,6 +28,7 @@ class Order:
         self.food = self.menu.get_food()    # Dir Liste mit dem Essen wir hier abgespeichert
         self.tabledrink = []    # Die Getränke die bestellt wurden
         self.tablefood = []    # Das Essen das bestellt wurde
+        self.extra_wuensche = Extra_Wuensche()    # Die extra Wünsche die bestellt wurden
 
 
     def thy_table(self):
@@ -109,6 +111,7 @@ class Order:
         self.thy_table()
         self.ordering_drinks()
         self.ordering_food()
+        self.extra_wuensche.plus()
 
 
 # Example usage

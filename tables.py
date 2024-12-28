@@ -1,5 +1,5 @@
 '''
-tisch
+table occupies itself with every table and its order details
 '''
 
 from ordering_system import Order
@@ -27,7 +27,7 @@ class Table:
 
     def orderdetails(self):
         '''
-        prints the order details
+        prints the order details, like drinks and food
         '''
         print(f'Order details for table {self.tablenr} are: ')
         if not self.order.tabledrink and not self.order.tablefood:
