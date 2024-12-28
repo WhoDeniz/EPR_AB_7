@@ -1,7 +1,9 @@
 '''
 order per table
 '''
+
 __author__ = "8503197, Tas"
+
 
 from menu import Menu
 
@@ -10,15 +12,22 @@ class Order:
     '''
     Order class contains the order of the people
     '''
+    last_ordernr = 0
 
     def __init__(self, menu_file):
         """
         Hier wird die Order class initialisiert
         """
+        Order.last_ordernr += 1
+        self.ordernr = Order.last_ordernr
+
         self.menu = Menu(menu_file)    # Wir laden die CSV file in die Variabel self.menu.
         self.menu.load_menu()
         self.drinks = self.menu.get_drinks()    # Die Liste mit den Getränken wird hier abgespeichert
         self.food = self.menu.get_food()    # Dir Liste mit dem Essen wir hier abgespeichert
+        self.tabledrink = []    # Die Getränke die bestellt wurden
+        self.tablefood = []    # Das Essen das bestellt wurde
+
 
     def thy_table(self):
         """
@@ -53,6 +62,7 @@ class Order:
                                                                         # Restaurant muss man mindestens ein Getränk
                                                                         # bestellen. Wir sind böse idc.
             if drink in self.drinks:
+                self.tabledrink.append(drink)    # Die Getränke die bestellt wurden werden in die Liste tabledrink gespeichert
                 again = input(f"Great here is your {drink}, do you want something else(yes/no)?: ").strip().lower()
                 if again == "yes":    # Möglichkeit mehrere Sachen zu bestellen
                     continue
@@ -61,9 +71,7 @@ class Order:
                     break    # Damit wir nicht in einer dauerschleife gefangen sind
             else:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
-                print("Those are our drinks", ",".join(self.drinks))    # Eine Auflistung der Getränke damit man nicht die
-                                                                        # ganze Zeit hochgehen muss
-        print(drink)
+                print("Those are our drinks", ",".join(self.drinks))    # Eine Auflistung der Getränke damit man nicht die ganze Karte durchsuchen muss
 
     def ordering_food(self):
         """
@@ -73,6 +81,7 @@ class Order:
             food = input("What do you wanna eat?\n").strip().lower()
 
             if food in self.food:
+                self.tablefood.append(food)    # Das Essen wird in die Liste tablefood gespeichert
                 again = input(f"Great here is your {food}, do you want something else(yes/no)?: ").strip().lower()
                 if again == "yes":
                     continue
@@ -82,11 +91,33 @@ class Order:
             else:
                 print("Oh sorry we dont have that in our menu, would you like something different?")
                 print("Those are our Main dishes", ",".join(self.food))    # Alles genauso wie bei den drinks
-        print(food)
 
+    def get_drinks_str(self):
+        """
+        Returns the drinks as a string
+        """
+        return ', '.join(self.tabledrink)
 
-# if __name__ == "__main__":
-#   order = Order("food.csv")
-#   order.thy_table()
-#   order.ordering_drinks(drink=[])
-#   order.ordering_food()
+    def get_food_str(self):
+        """
+        Returns the food as a string
+        """
+        return ', '.join(self.tablefood)
+
+    def bestellung_aufnehmen(self):
+
+        self.thy_table()
+        self.ordering_drinks()
+        self.ordering_food()
+
+        # print(f'Order number: {order.ordernr}')
+        # print(f'Drinks: {order.get_drinks_str()}')
+        # print(f'Food: {order.get_food_str()}')
+
+# Example usage
+if __name__ == "__main__":
+    order = Order(menu_file="food.csv")
+    order.bestellung_aufnehmen()
+    print(f"Order number: {order.ordernr}")
+    print(f"Drinks: {order.get_drinks_str()}")
+    print(f"Food: {order.get_food_str()}")

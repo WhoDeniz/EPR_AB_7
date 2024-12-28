@@ -5,8 +5,10 @@ UI
 from ordering_system import Order
 from menu import Menu
 from extra_wuensche import Extra_Wuensche
+from tables import Table
 
 __author__ = "8503197, Tas"
+
 
 class Uebersicht:
     def __init__(self):
@@ -16,8 +18,7 @@ class Uebersicht:
 
         self.extra_wuensche = Extra_Wuensche()
 
-        self.order = Order("food.csv")
-
+        self.tables = []
 
     def anzeige(self):
 
@@ -29,16 +30,21 @@ class Uebersicht:
             print("5.Rechnung ausdrucken")
             print("6.Exit")
 
-            auswahl = input("\nGeben Sie bitte die gewünschte Funktion ein(1-6):")
+            auswahl = input("\nGeben Sie bitte die gewünschte Funktion ein(1-6): ")
 
             if auswahl == "1":
-                self.order.bestellung_aufnehmen()
+                order = Order("food.csv")
+                order.bestellung_aufnehmen()
+                table = Table(True, order)
+                self.tables.append(table)
+                print(f"New table {table.tablenr} added with order number {order.ordernr}")
             elif auswahl == "2":  # GOTO Tisch system fertig machen
-                pass
+                for table in self.tables:
+                    table.orderdetails()
             elif auswahl == "3":
-                 self.extra_wuensche.plus()
+                self.extra_wuensche.plus()
             elif auswahl == "4":
-                 self.menu.menu_display()  # Menue anzeigen lassen
+                self.menu.menu_display()  # Menue anzeigen lassen
             elif auswahl == "5":  # GOT Rechnung System fertig machen
                 pass
             elif auswahl == "6":
@@ -47,8 +53,7 @@ class Uebersicht:
             else:
                 print("Ungültige Auswahl. Bitte wählen Sie eine Zahl zwischen 1 und 6.")
 
+
 if __name__ == "__main__":
     uebersicht = Uebersicht()
     uebersicht.anzeige()
-
-

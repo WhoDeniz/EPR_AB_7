@@ -17,7 +17,7 @@ class Extra_Wuensche:
         while True:
             more = input("Do you want to add(add) something for 1€ or "
                          "Do you want to remover(remove) something. "
-                         "If u want to exit just say so.").strip().lower()
+                         "If u want to exit just say so. ").strip().lower()
 
             if more == "add":
                 lots = input("What do you want to add for 1€? ")

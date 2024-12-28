@@ -70,7 +70,7 @@ class Menu:
 # testen können und es nicht in anderen Dateien direkt ausgeführt wird.
 
 
-# if __name__ == "__main__":
-#    menu = Menu("food.csv")
-#    menu.load_menu()
-#    menu.menu_display()
+if __name__ == "__main__":
+    menu = Menu("food.csv")
+    menu.load_menu()
+    menu.menu_display()
