@@ -2,7 +2,7 @@
 tisch
 '''
 
-from order import Order
+from ordering_system  import Order
 
 
 class Table:

@@ -1,8 +1,12 @@
-__author__="8503197, Tas"
+'''
+UI
+'''
+
 from ordering_system import Order
 from menu import Menu
 from extra_wuensche import Extra_Wuensche
 
+__author__ = "8503197, Tas"
 
 class Uebersicht:
     def __init__(self):
@@ -19,24 +23,23 @@ class Uebersicht:
 
         while True:
             print("\n1.Bestellung aufnehmen")
-            print("2.Tisch übersicht") #Tisch System
+            print("2.Tisch übersicht")  # Tisch System
             print("3.Extra Wünsche")
             print("4.Menü anzeigen")
             print("5.Rechnung ausdrucken")
             print("6.Exit")
 
-
             auswahl = input("\nGeben Sie bitte die gewünschte Funktion ein(1-6):")
 
             if auswahl == "1":
                 self.order.bestellung_aufnehmen()
-            elif auswahl == "2":#GOTO Tisch system fertig machen
+            elif auswahl == "2":  # GOTO Tisch system fertig machen
                 pass
             elif auswahl == "3":
                  self.extra_wuensche.plus()
             elif auswahl == "4":
-                 self.menu.menu_display() #Menue anzeigen lassen
-            elif auswahl == "5": #GOT Rechnung System fertig machen
+                 self.menu.menu_display()  # Menue anzeigen lassen
+            elif auswahl == "5":  # GOT Rechnung System fertig machen
                 pass
             elif auswahl == "6":
                 print("Goodbye!!!")
