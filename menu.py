@@ -2,7 +2,7 @@
 display menu
 '''
 
-__author__ = "8503197, Tas"
+__author__ = "8503197, Tas; 8566858, Socol"
 
 
 import csv
@@ -65,7 +65,7 @@ class Menu:
         System genutzt werden können
         '''
         return self.drinks
-    
+
     def get_price(self, item_name):
         '''
         Gibt den Preis des Items zurück

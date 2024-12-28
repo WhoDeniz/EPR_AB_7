@@ -2,7 +2,7 @@
 extra wishes for the costumers
 '''
 
-__author__ = "8503197, Tas"
+__author__ = "8503197, Tas, 8566858, Socol"
 
 
 class Extra_Wuensche:

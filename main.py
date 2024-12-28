@@ -2,13 +2,13 @@
 UI
 '''
 
+__author__ = "8503197, Tas; 8566858, Socol"
+
 from ordering_system import Order
 from menu import Menu
 from extra_wuensche import Extra_Wuensche
 from tables import Table
 from invoice import Invoice
-
-__author__ = "8503197, Tas"
 
 
 class Uebersicht:

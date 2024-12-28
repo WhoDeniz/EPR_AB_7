@@ -2,6 +2,8 @@
 table occupies itself with every table and its order details
 '''
 
+__author__ = "8503197, Tas; 8566858, Socol"
+
 from ordering_system import Order
 
 
@@ -38,8 +40,6 @@ class Table:
             print(f'Food: {self.order.get_food_str()}')
 
 
-
-
 # Example usage
 if __name__ == "__main__":
     order1 = Order(menu_file="food.csv")
@@ -47,4 +47,3 @@ if __name__ == "__main__":
 
     table1 = Table(table_status=True, order=order1)
     table1.orderdetails()
-    

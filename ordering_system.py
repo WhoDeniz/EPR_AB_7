@@ -2,7 +2,7 @@
 order per table
 '''
 
-__author__ = "8503197, Tas"
+__author__ = "8503197, Tas; 8566858, Socol"
 
 
 from menu import Menu
@@ -29,7 +29,6 @@ class Order:
         self.tabledrink = []    # Die Getränke die bestellt wurden
         self.tablefood = []    # Das Essen das bestellt wurde
         self.extra_wuensche = Extra_Wuensche()    # Die extra Wünsche die bestellt wurden
-
 
     def thy_table(self):
         """
@@ -111,7 +110,6 @@ class Order:
         self.thy_table()
         self.ordering_drinks()
         self.ordering_food()
-        self.extra_wuensche.plus()
 
 
 # Example usage
