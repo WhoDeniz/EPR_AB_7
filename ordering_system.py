@@ -110,9 +110,6 @@ class Order:
         self.ordering_drinks()
         self.ordering_food()
 
-        # print(f'Order number: {order.ordernr}')
-        # print(f'Drinks: {order.get_drinks_str()}')
-        # print(f'Food: {order.get_food_str()}')
 
 # Example usage
 if __name__ == "__main__":

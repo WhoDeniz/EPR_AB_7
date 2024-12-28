@@ -38,7 +38,7 @@ class Uebersicht:
                 table = Table(True, order)
                 self.tables.append(table)
                 print(f"New table {table.tablenr} added with order number {order.ordernr}")
-            elif auswahl == "2":  # GOTO Tisch system fertig machen
+            elif auswahl == "2":
                 for table in self.tables:
                     table.orderdetails()
             elif auswahl == "3":
